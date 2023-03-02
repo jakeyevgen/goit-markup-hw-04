@@ -27,6 +27,10 @@
     --doing-card-top-gap: 24px;
     --advant-card-left-gap: 24px;
     --advant-card-top-gap: 24px;
+    --social-list-link: #4D5AE5;
+    --social-list-icon: #F4F4FD;
+    --social-hover-focus: #404BBF;
+    --social-hover-focus-icon: #F4F4FD;
 }
 
 h1,
@@ -121,12 +125,12 @@ body {
 }
 
 .logo-web {
-    color: var(--logo-web-color);
+    /* color: var(--logo-web-color); */
     margin-right: 76px;
 }
 
 .logo-web-footer {
-    color: var(--logo-web-footer-color);
+    /* color: var(--logo-web-footer-color); */
     margin-bottom: 16px;
 }
 
@@ -173,7 +177,7 @@ body {
 
 /* ============= Hero section ============= */
 .hero {
-    background: var(--hero-color);
+    /* background: var(--hero-color); */
     padding: 188px 0;
 }
 
@@ -227,6 +231,13 @@ body {
 button {
     font-family: inherit;
     cursor: pointer;
+}
+
+.background {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("/images/hero/people-office.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 /* ============= /Hero section ============= */
@@ -357,6 +368,7 @@ button {
     letter-spacing: 0.02em;
     color: var(--team-advan-descr-color);
     text-align: center;
+    margin-bottom: 8px;
 }
 
 .team-content {
@@ -364,6 +376,35 @@ button {
     background-color: var(--team-carg-bg-color);
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
     border-radius: 0px 0px 4px 4px;
+}
+
+.social-list-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--social-list-link);
+}
+
+.social-list-link:hover,
+.social-list-link:focus {
+    background-color: var(--social-hover-focus);
+}
+
+.social-list-link:hover .social-list-icon .social-list-link:focus .social-list-icon {
+    fill: var(--social-hover-focus-icon);
+}
+
+.social-list {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.social-list-icon {
+    fill: var(--social-list-icon);
 }
 
 /* ============= /Team section ============= */
