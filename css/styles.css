@@ -33,6 +33,7 @@
     --social-hover-focus-icon: #F4F4FD;
     --footer-list-link: rgba(255, 255, 255, 0.1);
     --footer-hover-focus: #31D0AA;
+    --advant-icons: #F4F4FD;
 }
 
 h1,
@@ -286,6 +287,17 @@ button {
 
 .advant-card-content {
     display: block;
+}
+
+.icon-box {
+    display: flex;
+    width: 264px;
+    height: 112px;
+    background: var(--advant-icons);
+    border-radius: 4px;
+    margin-bottom: 8px;
+    justify-content: center;
+    align-items: center;
 }
 
 
