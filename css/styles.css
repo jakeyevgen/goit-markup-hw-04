@@ -39,6 +39,7 @@
     --customers-icon-top-gap: 24px;
     --customers-icon-left-gap: 24px;
     --customers-icons-color: #404BBF;
+    --customer-list-icon: #8E8F99;
 }
 
 h1,
@@ -464,8 +465,17 @@ button {
     height: 88px;
 }
 
-.custumers-list-icon:hover,
-.custumers-list-icon:focus {
+.custumers-list-icon {
+    fill: var(--customer-list-icon);
+}
+
+.customers-item:hover,
+.customers-item:focus {
+    outline: 1px solid var(--customers-icons-color);
+}
+
+.customers-item:hover .custumers-list-icon,
+.customers-item:focus .custumers-list-icon {
     fill: var(--customers-icons-color);
 }
 
