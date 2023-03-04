@@ -206,6 +206,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     max-width: 496px;
+
 }
 
 
@@ -243,7 +244,8 @@ button {
 }
 
 .background {
-    width: 1440px;
+    background-color: #2E2F42;
+    max-width: 1440px;
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/hero/people-office.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -586,6 +588,7 @@ button {
     background: var(--btn-accent-bg-color);
     color: var(--btn-accent-font-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-color: var(--btn-accent-bg-color);
 }
 
 
