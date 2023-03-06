@@ -61,7 +61,7 @@
 			<section class="hero background">
 				<div class="container">
 					<h1 class="hero-title">Effective Solutions for Your Business</h1>
-					<button class="modal-btn modal-btn-font btn-center" type="button"> Order Service </button>
+					<button class="modal-btn modal-btn-font btn-center" type="button" data-modal-open> Order Service </button>
 				</div>
 			</section>
 			<!-- /Effective Solutions -->
@@ -489,5 +489,18 @@
 			</div>
 		</footer>
 		<!-- Footer -->
+
+		<!-- Modal window -->
+		<div class="backdrop is-hidden" data-modal>
+			<div class="modal">
+				<button type="button" class="modal-close-btn" data-modal-close>
+					<svg class="modal-close-btn-icon" width="8" height="8">
+						<use href="./images/sprite/icons.svg#icon-close"></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+		<!-- /Modal window -->
+		<script src="./js/modal.js"></script>
 	</body>
 </html>

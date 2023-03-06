@@ -40,6 +40,10 @@
     --customers-icon-left-gap: 24px;
     --customers-icons-color: #404BBF;
     --customer-list-icon: #8E8F99;
+    --portfolio-overlay-font-color: #F4F4FD;
+    --portfolio-overlay-color: #4D5AE5;
+    --madal-window-color: #FFFFFF;
+    --modal-window-item-color: #E7E9FC;
 }
 
 h1,
@@ -231,11 +235,16 @@ body {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     border: 1px solid #4D5AE5;
+    transition-property: border-color, background-color, transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0;
 }
 
 .modal-btn:hover,
 .modal-btn:focus {
     background: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 button {
@@ -410,6 +419,10 @@ button {
     height: 40px;
     border-radius: 50%;
     background-color: var(--social-list-link);
+    transition-property: background-color, fill, transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0;
 }
 
 .social-list-link:hover,
@@ -466,6 +479,10 @@ button {
     width: 168px;
     height: 88px;
     fill: var(--customer-list-icon);
+    transition-property: outline, fill, transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0;
 }
 
 .customer-card {
@@ -531,6 +548,10 @@ button {
     height: 40px;
     border-radius: 50%;
     background-color: var(--footer-list-link);
+    transition-property: background-color, transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0;
 }
 
 .footer-list-link:hover,
@@ -570,7 +591,13 @@ button {
     background: var(--btn-bg-color);
     border: 1px solid #E7E9FC;
     border-radius: 4px;
+    transition-property: border-color, background-color, transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0;
 }
+
+transform;
 
 .portfolio-btn-font {
     font-weight: 500;
@@ -647,4 +674,102 @@ button {
 
 .portfolio-card:hover {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--portfolio-overlay-font-color);
+    background-color: var(--portfolio-overlay-color);
+    text-align: left;
+    padding: 40px 32px 40px;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    transform: translate(0, 100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.porfolio-thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.item:hover .overlay {
+    transform: translate(0, 0);
+}
+
+/* ============= /Portfolio section ============= */
+
+/* ========== Modal window  ============= */
+
+.backdrop {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: transform;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 408px;
+    height: 576px;
+    background: var(--madal-window-color);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    background-color: transparent;
+    border: 1px solid var(--modal-window-item-color);
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    transition-property: border-color, background-color, transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    border-color: var(--btn-accent-bg-color);
+    background-color: var(--btn-accent-bg-color);
+}
+
+.modal-close-btn-icon {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn:hover .modal-close-btn-icon,
+.modal-close-btn:focus .modal-close-btn-icon {
+    fill: var(--madal-window-color);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(3);
 }
